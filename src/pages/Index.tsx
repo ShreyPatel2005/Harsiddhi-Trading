@@ -61,7 +61,7 @@ const Index = () => {
 
             {/* Center (Title - only on md+) */}
             <div className="hidden md:block">
-              <p className="text-lg text-red-600 font-kumar-one font-bold">
+              <p className="text-2xl text-red-600 font-kumar-one font-bold">
                 Harsiddhi Tradings & Pavanputra Sales
               </p>
             </div>
@@ -70,13 +70,13 @@ const Index = () => {
             <div className="md:flex items-center space-x-6 hidden">
               <Link
                 to="/owners"
-                className="text-orange-700 hover:text-orange-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                className="text-red-600 hover:text-orange-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
               >
                 Our Team
               </Link>
               <Link
                 to="/contact"
-                className="text-orange-700 hover:text-orange-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                className="text-red-600 hover:text-orange-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
               >
                 Contact
               </Link>
@@ -111,21 +111,21 @@ const Index = () => {
                     </Link>
                     <Link
                       to="/contact"
-                      className="text-red-700 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                      className="text-red-600 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Contact
                     </Link>
                     <Link
                       to="/harsiddhi"
-                      className="text-red-700 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                      className="text-red-600 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Harsiddhi Trading
                     </Link>
                     <Link
                       to="/pavanputra"
-                      className="text-red-700 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                      className="text-red-600 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       Pavanputra Sales
@@ -386,7 +386,7 @@ const Index = () => {
             <div className="text-center mb-16">
               <h3 className="text-3xl font-bold text-orange-800 mb-4 font-kumar-one">Why Choose Harsiddhi Tradings?</h3>
               <p className="text-orange-600 max-w-2xl mx-auto text-lg font-semibold">
-                Over 14 years of excellence serving Gujarat's leading businesses
+                Over 21 years of excellence serving Gujarat's leading businesses
               </p>
             </div>
             
