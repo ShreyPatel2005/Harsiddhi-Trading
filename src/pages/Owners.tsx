@@ -52,16 +52,15 @@ const Owners = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <Link to="/" className="flex items-center space-x-2 text-orange-700 hover:text-orange-900 transition-colors">
-                <ArrowLeft className="w-4 h-4" />
-                <span className="text-sm font-medium">Back to Home</span>
+                <ArrowLeft className="w-6 h-6" />
+                <span className="text-sm font-bold">Home</span>
               </Link>
+            </div>
+            <div className="hidden md:block"> {/* Hide on mobile */}
+              <p className="text-lg text-red-600 font-kumar-one font-bold">Harsiddhi Tradings & Pavanputra Sales</p>
             </div>
             <div className="flex items-center space-x-3">
               <BrandLogo size="sm" />
-              <div>
-                <h1 className="text-lg font-bold text-orange-800">Our Leadership Team</h1>
-                <p className="text-xs text-orange-600">Meet the experts behind our success</p>
-              </div>
             </div>
           </div>
         </div>
@@ -70,7 +69,7 @@ const Owners = () => {
       <div className="mt-20 container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-orange-800 mb-6">
+          <h2 className="text-3xl font-bold text-orange-800 mb-6">
             Meet Our Leadership Team
           </h2>
           <p className="text-lg text-orange-700 max-w-6xl mx-auto leading-relaxed">
@@ -124,16 +123,7 @@ const Owners = () => {
                       {owner.description}
                     </p>
                     
-                    <div className="flex space-x-3">
-                      <Link to="/contact" className="flex items-center space-x-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-sm">
-                        <Phone className="w-3 h-3" />
-                        <span>Contact</span>
-                      </Link>
-                      <Link to="/contact" className="flex items-center space-x-2 px-4 py-2 border border-orange-300 text-orange-700 rounded-lg hover:bg-orange-50 transition-colors text-sm">
-                        <Mail className="w-3 h-3" />
-                        <span>Email</span>
-                      </Link>
-                    </div>
+                    
                   </div>
                 </div>
               ))}
@@ -182,16 +172,6 @@ const Owners = () => {
                       {owner.description}
                     </p>
                     
-                    <div className="flex space-x-3">
-                      <button className="flex items-center space-x-2 px-4 py-2 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors text-sm">
-                        <Phone className="w-3 h-3" />
-                        <span>Contact</span>
-                      </button>
-                      <button className="flex items-center space-x-2 px-4 py-2 border border-orange-300 text-orange-700 rounded-lg hover:bg-orange-50 transition-colors text-sm">
-                        <Mail className="w-3 h-3" />
-                        <span>Email</span>
-                      </button>
-                    </div>
                   </div>
                 </div>
               ))}
@@ -240,8 +220,45 @@ const Owners = () => {
             </div>
           </div>
         </div>
+        
       </div>
+      {/* Footer - Updated with calmer color and credit */}
+        <footer className="bg-amber-100 mt-10 border-round text-gray-800 py-4">
+          <div className="container mx-auto px-4 items-center">
+            <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
+              <div>
+                <div className="flex items-center justify-center  space-x-2">
+                  <MapPin className="w-5 h-5" />
+                  <span className="font-bold">Vadodara Locations</span>
+                </div>
+                <p className="text-slate-600 text-sm text-center font-semibold">Multiple warehouses for faster delivery</p>
+              </div>
+              <div className="justify-center">
+                <div className="flex items-center justify-center  space-x-2">
+                  <Phone className="w-5 h-5" />
+                  <span className="font-bold">24/7 Support</span>
+                </div>
+                <p className="text-slate-600 text-sm text-center font-semibold">Dedicated account managers</p>
+              </div>
+              <div>
+                <div className="flex items-center justify-center  space-x-2">
+                  <Mail className="w-5 h-5" />
+                  <span className="font-bold">Quick Response</span>
+                </div>
+                <p className="text-slate-600 text-sm text-center font-semibold">Same-day quotes and processing</p>
+              </div>
+            </div>
+            <div className=" text-center mx-8 my-2 pt-8 border-t border-slate-600">
+              <div className="flex items-center justify-center space-x-10 mb-3">
+                <BrandLogo size="sm" />
+              </div>
+              <p className="text-slate-600 text-sm text-center font-kumar-one font-semibold">&copy; 2024 All rights reserved. Est. 2010, Vadodara, Gujarat</p>
+              <p className="text-slate-800 text-xs mt-2">Website created by Shrey Patel</p>
+            </div>
+          </div>
+        </footer>
     </div>
+    
   );
 };
 

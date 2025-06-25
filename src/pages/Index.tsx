@@ -3,11 +3,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Package, Phone, Mail, MapPin, Award, Users, Clock, Shield, ChevronLeft, ChevronRight } from "lucide-react";
+import { Package, Phone, Mail, MapPin, Award, Users, Clock, Shield, ChevronLeft, ChevronRight, Menu } from "lucide-react";
 import BrandLogo from "@/components/BrandLogo";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 const Index = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
   // Updated carousel images without founder photos
   const carouselImages = [
@@ -46,28 +48,101 @@ const Index = () => {
       {/* Fixed Header */}
       <header className="fixed top-0 left-0 right-0 bg-white/60 backdrop-blur-lg shadow-lg border-b-2 border-orange-200 z-50">
         <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-3">
-              <button onClick={scrollToTop} className="flex items-center space-x-3 hover:opacity-80 transition-opacity">
+          <div className="relative flex items-center justify-between px-4 py-2">
+            {/* Left (Logo) */}
+            <div className="flex items-center space-x-3 md:static absolute left-1/2 -translate-x-1/2 md:translate-x-0 md:left-0">
+              <button
+                onClick={scrollToTop}
+                className="flex items-center space-x-3 hover:opacity-80 transition-opacity"
+              >
                 <BrandLogo size="md" />
-                <div>
-                  <p className="text-lg text-orange-600 font-kumar-one font-bold">Wholesale Suppliers</p>
-                </div>
               </button>
             </div>
-            <nav className="hidden md:flex space-x-6">
-              <Link to="/" className="text-orange-700 hover:text-orange-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold">Home</Link>
-              <Link to="/owners" className="text-orange-700 hover:text-orange-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold">Our Team</Link>
-              <Link to="/contact" className="text-orange-700 hover:text-orange-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold">Contact</Link>
-            </nav>
-          </div>
+
+            {/* Center (Title - only on md+) */}
+            <div className="hidden md:block">
+              <p className="text-lg text-red-600 font-kumar-one font-bold">
+                Harsiddhi Tradings & Pavanputra Sales
+              </p>
+            </div>
+
+            {/* Right (Nav or Mobile Menu) */}
+            <div className="md:flex items-center space-x-6 hidden">
+              <Link
+                to="/owners"
+                className="text-orange-700 hover:text-orange-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+              >
+                Our Team
+              </Link>
+              <Link
+                to="/contact"
+                className="text-orange-700 hover:text-orange-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+              >
+                Contact
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button (only on mobile) */}
+            <div className="md:hidden">
+              <Sheet open={mobileMenuOpen} onOpenChange={setMobileMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon" className="text-orange-700">
+                    <Menu className="h-6 w-6" />
+                  </Button>
+                </SheetTrigger>
+                <SheetContent
+                  side="right"
+                  className="w-[250px] sm:w-[300px] bg-white p-6"
+                >
+                  <nav className="flex flex-col space-y-4">
+                    <Link
+                      to="/"
+                      className="text-red-700 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Home
+                    </Link>
+                    <Link
+                      to="/owners"
+                      className="text-red-600 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Our Team
+                    </Link>
+                    <Link
+                      to="/contact"
+                      className="text-red-700 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Contact
+                    </Link>
+                    <Link
+                      to="/harsiddhi"
+                      className="text-red-700 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Harsiddhi Trading
+                    </Link>
+                    <Link
+                      to="/pavanputra"
+                      className="text-red-700 hover:text-red-900 hover:bg-orange-100 px-3 py-2 rounded-md transition-all text-lg font-bold"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Pavanputra Sales
+                    </Link>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
+            </div>
+
         </div>
       </header>
 
       {/* Add padding-top to account for fixed header */}
       <div className="mt-20 ">
         {/* Image Carousel */}
-        <div className="relative w-full h-[80vh] overflow-hidden">
+        <div className="relative w-full h-[80vh] overflow-hidden md:h-[80vh] sm:h-[30vh] xs:h-[10vh]"> {/* Adjusted height for mobile */}
           <div 
             className="flex transition-transform duration-500 ease-in-out h-full"
             style={{ transform: `translateX(-${currentSlide * 100}%)` }}
@@ -86,14 +161,14 @@ const Index = () => {
           
           <button 
             onClick={prevSlide}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white rounded-full p-3 transition-all shadow-lg border-2 border"
+            className="absolute left-4 hidden md:block top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white rounded-full p-3 transition-all shadow-lg border-2 border"
           >
             <ChevronLeft className="w-6 h-6 text-orange-600" />
           </button>
           
           <button 
             onClick={nextSlide}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white rounded-full p-3 transition-all shadow-lg border-2 border"
+            className="absolute right-4 hidden md:block top-1/2 transform -translate-y-1/2 bg-white/95 hover:bg-white rounded-full p-3 transition-all shadow-lg border-2 border"
           >
             <ChevronRight className="w-6 h-6 text-orange-600" />
           </button>
@@ -114,21 +189,21 @@ const Index = () => {
         {/* Hero Section */}
         <section className="relative py-20 px-4 bg-amber-50">
           <div className="container mx-auto text-center relative z-10">
-            <h2 className="text-4xl  font-bold text-orange-800 mb-6 leading-tight font-kumar-one drop-shadow-sm">
+            <h2 className="text-4xl font-bold text-orange-800 mb-6 leading-tight font-kumar-one drop-shadow-sm md:text-5xl sm:text-4xl xs:text-3xl"> {/* Adjusted font size for mobile */}
               Professional Wholesale Supply Solutions
             </h2>
-            <p className="text-xl text-orange-700 mb-12 max-w-2xl mx-auto font-semibold">
+            <p className="text-xl text-orange-700 mb-12 max-w-2xl mx-auto font-semibold md:text-xl sm:text-lg xs:text-base"> {/* Adjusted font size for mobile */}
               Serving 500+ businesses across Gujarat with premium ingredients and equipment since 2010
             </p>
 
             {/* Main Business Divisions */}
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Pavanputra Sales */}
-              <Card className="bg-gradient-to-br from-blue-50 to-indigo-100 border-2 border-blue-200 shadow-xl hover:shadow-2xl transition-all">
+              <Card className="bg-gradient-to-br from-blue-50 to-indigo-100 border-2 border-blue-200 shadow-xl hover:shadow-2xl transition-all md:w-auto sm:w-full xs:w-full"> {/* Adjusted card width for mobile */}
                 <CardContent className="p-8 text-gray-900">
                   <BrandLogo size="sm" className="mx-auto mb-6" />
-                  <h3 className="text-2xl font-bold mb-4 font-kumar-one text-blue-700">Pavanputra Sales</h3>
-                  <p className="text-blue-600 mb-6 text-sm leading-relaxed font-semibold">
+                  <h3 className="text-2xl font-bold mb-4 font-kumar-one text-blue-700 md:text-2xl sm:text-xl xs:text-lg">Pavanputra Sales</h3> {/* Adjusted font size for mobile */}
+                  <p className="text-blue-600 mb-6 text-sm leading-relaxed font-semibold md:text-sm sm:text-xs xs:text-xs"> {/* Adjusted font size for mobile */}
                     Professional bakery equipment, cake tins, moulds, and specialized baking tools
                   </p>
                   
@@ -148,7 +223,7 @@ const Index = () => {
                   </div>
                   
                   <Link to="/pavanputra">
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 text-sm font-bold rounded-lg shadow-lg border-2 border-blue-500">
+                    <Button className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white py-3 text-sm font-bold rounded-lg shadow-lg border-2 border-blue-500"> {/* Adjusted button size for mobile */}
                       Explore Bakery Supplies
                     </Button>
                   </Link>
@@ -156,33 +231,32 @@ const Index = () => {
               </Card>
 
               {/* Harsiddhi Tradings */}
-              <Card className="bg-gradient-to-br from-red-50 to-pink-100 border-2 border-red-200 shadow-xl hover:shadow-2xl transition-all">
+              <Card className="bg-gradient-to-br from-red-50 to-pink-100 border-2 border-red-200 shadow-xl hover:shadow-2xl transition-all md:w-auto sm:w-full xs:w-full"> {/* Adjusted card width for mobile */}
                 <CardContent className="p-8 text-gray-900">
                   <BrandLogo size="sm" className="mx-auto mb-6" />
-                  <h3 className="text-2xl font-bold mb-4 font-kumar-one text-red-700">Harsiddhi Tradings</h3>
-                  <p className="text-red-600 mb-6 text-sm leading-relaxed font-semibold">
+                  <h3 className="text-2xl font-bold mb-4 font-kumar-one text-red-700 md:text-2xl sm:text-xl xs:text-lg">Harsiddhi Tradings</h3> {/* Adjusted font size for mobile */}
+                  <p className="text-red-600 mb-6 text-sm leading-relaxed font-semibold md:text-sm sm:text-xs xs:text-xs"> {/* Adjusted font size for mobile */}
                     Premium wholesale ingredients, essences, compounds, and raw materials
                   </p>
-                  
                   <div className="space-y-2 mb-6 text-sm">
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <span className="text-red-600 font-semibold">Chocolate Compounds</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <span className="text-red-600 font-semibold">Food Colors & Essences</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-red-500 rounded-full"></div>
-                      <span className="text-red-600 font-semibold">Bulk Ingredients</span>
-                    </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <span className="text-red-600 font-semibold">Chocolate Compounds</span>
                   </div>
-                  
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <span className="text-red-600 font-semibold">Food Colors & Essences</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-2 h-2 bg-red-500 rounded-full"></div>
+                    <span className="text-red-600 font-semibold">Bulk Ingredients</span>
+                  </div>
+                  </div>
+                
                   <Link to="/harsiddhi">
-                    <Button className="w-full bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 text-sm font-bold rounded-lg shadow-lg border-2 border-red-500">
-                      Explore Ingredients
-                    </Button>
+                  <Button className="w-full bg-gradient-to-r  from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white py-3 text-sm font-bold rounded-lg shadow-lg border-2 border-red-500"> {/* Adjusted button size for mobile */}
+                    Explore Ingredients
+                  </Button>
                   </Link>
                 </CardContent>
               </Card>
@@ -190,14 +264,14 @@ const Index = () => {
           </div>
         </section>
 
-        {/* About Section - Moved from About page */}
-        <section className="py-20 bg-amber-50">
-          <div className="container mx-auto px-4">
-            {/* Hero Section with Background */}
-            <div className="text-center mb-16 relative overflow-hidden rounded-lg"
-                 style={{backgroundImage: `url('/uploads/f3eea3ee-1dc9-4e52-98e4-e7da2fe884f6.png')`, 
-                         backgroundSize: 'cover', backgroundPosition: 'center'}}>
-              <div className="absolute inset-0 bg-amber-900/80"></div>
+      {/* About Harsiddhi Tradings Group */}
+      <section className="py-20 bg-amber-50">
+        <div className="container mx-auto px-4">
+          {/* Hero Section with Background */}
+          <div className="text-center mb-16 relative overflow-hidden rounded-lg"
+               style={{backgroundImage: `url('/uploads/f3eea3ee-1dc9-4e52-98e4-e7da2fe884f6.png')`, 
+                       backgroundSize: 'cover', backgroundPosition: 'center'}}>
+            <div className="absolute inset-0 bg-amber-900/80"></div>
               <div className="relative z-10 p-12">
                 <h2 className="text-5xl font-bold text-white mb-6 font-carter-one">About Harsiddhi Tradings Group</h2>
                 <p className="text-xl text-amber-100 max-w-3xl mx-auto">

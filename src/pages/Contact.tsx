@@ -90,15 +90,15 @@ const Contact = () => {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <Link to="/" className="flex items-center space-x-2 text-orange-700 hover:text-orange-900">
-                <ArrowLeft className="w-5 h-5" />
-                <span>Back to Home</span>
+                <ArrowLeft className="w-6 h-6" />
+                <span className="text-sm font-bold">Home</span>
               </Link>
+            </div>
+            <div className="hidden md:block"> {/* Hide on mobile */}
+              <p className="text-lg text-red-600 font-kumar-one font-bold">Harsiddhi Tradings & Pavanputra Sales</p>
             </div>
             <div className="flex items-center space-x-3">
               <BrandLogo size="sm" />
-              <div>
-                <h1 className="text-lg font-bold text-gray-800 font-kumar-one">Contact Us</h1>
-              </div>
             </div>
           </div>
         </div>
@@ -297,6 +297,41 @@ const Contact = () => {
           </CardContent>
         </Card> */}
       </div>
+      {/* Footer - Updated with calmer color and credit */}
+        <footer className="bg-amber-100 mt-10 border-round text-gray-800 py-4">
+          <div className="container mx-auto px-4 items-center">
+            <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
+              <div>
+                <div className="flex items-center justify-center  space-x-2">
+                  <MapPin className="w-5 h-5" />
+                  <span className="font-bold">Vadodara Locations</span>
+                </div>
+                <p className="text-slate-600 text-sm text-center font-semibold">Multiple warehouses for faster delivery</p>
+              </div>
+              <div className="justify-center">
+                <div className="flex items-center justify-center  space-x-2">
+                  <Phone className="w-5 h-5" />
+                  <span className="font-bold">24/7 Support</span>
+                </div>
+                <p className="text-slate-600 text-sm text-center font-semibold">Dedicated account managers</p>
+              </div>
+              <div>
+                <div className="flex items-center justify-center  space-x-2">
+                  <Mail className="w-5 h-5" />
+                  <span className="font-bold">Quick Response</span>
+                </div>
+                <p className="text-slate-600 text-sm text-center font-semibold">Same-day quotes and processing</p>
+              </div>
+            </div>
+            <div className=" text-center mx-8 my-2 pt-8 border-t border-slate-600">
+              <div className="flex items-center justify-center space-x-10 mb-3">
+                <BrandLogo size="sm" />
+              </div>
+              <p className="text-slate-600 text-sm text-center font-kumar-one font-semibold">&copy; 2024 All rights reserved. Est. 2010, Vadodara, Gujarat</p>
+              <p className="text-slate-800 text-xs mt-2">Website created by Shrey Patel</p>
+            </div>
+          </div>
+        </footer>
     </div>
   );
 };
