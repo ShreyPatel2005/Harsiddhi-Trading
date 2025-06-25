@@ -237,21 +237,21 @@ const Index = () => {
               <h3 className="text-3xl font-bold text-center text-amber-900 mb-12 font-carter-one">Gallery</h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <img src="public/uploads/store entrance.png" alt="Store Front" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
+                  <img src="/uploads/store entrance.png" alt="Store Front" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
                   <div className="p-4 bg-white">
                     <h5 className="font-semibold text-amber-900">Store Front</h5>
                     <p className="text-amber-700 text-sm">Our welcoming storefront in Vadodara</p>
                   </div>
                 </div>
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <img src="public/uploads/harsiddhi.png" alt="Interior Products" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
+                  <img src="/uploads/harsiddhi.png" alt="Interior Products" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
                   <div className="p-4 bg-white">
                     <h5 className="font-semibold text-amber-900">Interior View</h5>
                     <p className="text-amber-700 text-sm">Organized inventory and product display</p>
                   </div>
                 </div>
                 <div className="rounded-lg overflow-hidden shadow-lg">
-                  <img src="public/uploads/pavanputra.png" alt="Product Display" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
+                  <img src="/uploads/pavanputra.png" alt="Product Display" className="w-full h-48 object-cover hover:scale-105 transition-transform" />
                   <div className="p-4 bg-white">
                     <h5 className="font-semibold text-amber-900">Product Range</h5>
                     <p className="text-amber-700 text-sm">Extensive selection of baking supplies</p>
