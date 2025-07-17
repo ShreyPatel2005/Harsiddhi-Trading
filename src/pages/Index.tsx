@@ -196,6 +196,21 @@ const Index = () => {
               Serving 500+ businesses across Gujarat with premium ingredients and equipment since 2010
             </p>
 
+            {/* Agency Brands Section */}
+            <div className="flex flex-col items-center justify-center mb-12">
+              <span className="text-lg font-bold text-orange-700 mb-4">We are proud agency holders of</span>
+              <div className="flex flex-row items-center justify-center gap-8 flex-wrap">
+                <div className="flex flex-col items-center">
+                  <img src="/brands/Tropolite.jpg" alt="Tropolite" className="h-20 w-auto rounded shadow-md border-2 border-orange-200 bg-white object-contain mb-2" />
+                  <span className="text-orange-800 font-semibold text-base">Tropolite</span>
+                </div>
+                <div className="flex flex-col items-center">
+                  <img src="/brands/BakersVille.jpg" alt="BakersVille" className="h-20 w-auto rounded shadow-md border-2 border-orange-200 bg-white object-contain mb-2" />
+                  <span className="text-orange-800 font-semibold text-base">BakersVille</span>
+                </div>
+              </div>
+            </div>
+
             {/* Main Business Divisions */}
             <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Pavanputra Sales */}
