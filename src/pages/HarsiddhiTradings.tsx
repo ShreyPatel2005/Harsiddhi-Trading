@@ -19,25 +19,25 @@ const HarsiddhiTradings = () => {
       name: "Chocolates",
       products: ["Chocolate Compound Slabs", "Choco Chips", "Couverture Chocolate", "Chocolate Slabs", "Chocolate fillings", "Ready to eat Chocolates"],
       description: "Premium chocolate products for professional use",
-      image: "https://imgs.search.brave.com/rvYgxEPy8uKztnpqfUdDTyKX18M3ecZlyRifqjvsuXY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXBob3RvL3NsYWJz/LXdoaXRlLW1pbGst/ZGFyay1jaG9jb2xh/dGUtMjYwbnctMTQx/NTU0Mzc2NS5qcGc"
+      image: "/Products/Chocolate.png"
     },
     {
-      name: "SMT Milk Powder",
+      name: "Skimmed Milk Powder",
       products: ["Milk Powder"],
       description: " Premium milk powder products for professional use",
-      image: "https://imgs.search.brave.com/rvYgxEPy8uKztnpqfUdDTyKX18M3ecZlyRifqjvsuXY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXBob3RvL3NsYWJz/LXdoaXRlLW1pbGst/ZGFyay1jaG9jb2xh/dGUtMjYwbnctMTQx/NTU0Mzc2NS5qcGc"
+      image: "/Products/milkPowder.png"
     },
     {
       name: "Cocoa Products",
       products: ["Cocoa Powder", "Cocoa Butter"],
       description: "Premium cocoa-based ingredients",
-      image: ""
+      image: "/Products/cocoPowder.png"
     },
     {
       name: "Essence",
       products: ["Flavouring Essence", "Liquid Essence", "Oil Essence", "Gel Essence", "Splash Essence"],
       description: "Essence for food manufacturing",
-      image: "https://imgs.search.brave.com/xt7Laq8DZtkRf_KGqADWc5JRCRdOqdsmsxKpuStEnqU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by92/YXJpb3VzLWhvbGkt/Y29sb3ItcG93ZGVy/LWJvd2wtYmxhY2st/YmFja2dyb3VuZF8y/My0yMTQ3OTQ5MDM0/LmpwZz9zZW10PWFp/c19oeWJyaWQmdz03/NDA"
+      image: "/Products/Essence.png"
     },
     {
       name: "Food Colors",
@@ -49,7 +49,7 @@ const HarsiddhiTradings = () => {
       name: "Edible Decoratives",
       products: ["Luster Dust", "Gold Leaf", "Silver Leaf", "Sprinkles", "Dazzling Drips", "Sparkling Flakes", "Precut Wafter paper", "Petal Dust", "Rice Paper", "Sugar Sheet", "Wafer Paper", "Crispearls", "Fondants Sugar Paste", "Pens and Markers", "Gel and Glaze"],
       description: "Premium edible decorations and finishing touches",
-      image: ""
+      image: "/Products/CakeProps.png"
     },
     {
       name: "Non Edible Decoratives",
@@ -61,7 +61,7 @@ const HarsiddhiTradings = () => {
       name: "Packaging",
       products: ["Plain White Cakes Boxes", "Glass Jars and Bottles", "PVC/Plastic Boxes", "Eco Friendly Packaging", "Paper Bags", "Wooden Disposables", "Decorative Ribbons", "Foils Wrappers and Tiles"],
       description: "Professional packaging solutions",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYKv2QY3Lc-gn6aC6z--AaP6zUbaZGJyQAa8gGOpKeeSvZL_ONPSGaSXzneoknTbOfaqI&usqp=CAU"
+      image: "/Products/CakeBox.png"
     },
     {
       name: "Ingredients",
@@ -102,9 +102,10 @@ const brandCategories = [
       { name: "CEC", logo: "CEC.png" },
       { name: "Lux", logo: "Lux.png" },
       { name: "Eagle", logo: "Eagle.png" },
-      { name: "Monika" },
-      { name: "Nandi" },
-      { name: "Lilly brand" }
+      { name: "Monita", logo: "Monita.png" },
+      { name: "Nandi", logo: "nandi.png" },
+      { name: "Lilly brand", logo: "chemCent.png" },
+      { name: "FAB", logo: "Fab.png" }
     ]
   },
   {
@@ -113,7 +114,14 @@ const brandCategories = [
       { name: "Morde", logo: "Morde.jpg" },
       { name: "2M", logo: "2M.png" },
       { name: "Vanhouten", logo: "VanHouten.png" },
-      { name: "Goldsmith", logo: "Goldsmith.png" }
+      { name: "Goldsmith", logo: "Goldsmith.png" },
+      { name: "VanLeer", logo: "VanLeer.png" }
+    ]
+  },
+  {
+    title: "Food Colors",
+    brands: [
+      { name: "ColourMist", logo: "ColourMist.png" }
     ]
   }
 ];

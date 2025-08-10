@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 import BrandLogo from "@/components/BrandLogo";
-import { ArrowLeft, Mail, Phone, Award, Calendar, MapPin } from "lucide-react";
+import { ArrowLeft, Mail, Phone, Award, Calendar, MapPin, Users, Building2, Star, Target, Heart } from "lucide-react";
 
 const Owners = () => {
   const owners = [
@@ -11,7 +11,6 @@ const Owners = () => {
       role: "Founder & Managing Director",
       experience: "20+ Years",
       specialization: "Food Ingredients & Supply Chain",
-      image: "/uploads/mahendra.png",
       description: "Leading expert in wholesale food ingredient distribution with extensive knowledge of quality control and supply chain management."
     },
     {
@@ -20,7 +19,6 @@ const Owners = () => {
       role: "Co-Founder & Operations Director",
       experience: "18+ Years",
       specialization: "Quality Control & Client Relations",
-      image: "/uploads/hansaben.png",
       description: "Specialist in maintaining quality standards and building long-term client relationships in the food industry."
     },
     {
@@ -29,7 +27,6 @@ const Owners = () => {
       role: "Founder & CEO",
       experience: "15+ Years",
       specialization: "Bakery Equipment & Technology",
-      image: "/uploads/vidisha.png",
       description: "Pioneer in introducing advanced bakery equipment and tools, helping modernize Gujarat's baking industry."
     },
     {
@@ -38,7 +35,6 @@ const Owners = () => {
       role: "Co-Founder & Technical Director",
       experience: "16+ Years",
       specialization: "Technical Solutions & Customer Support",
-      image: "/uploads/sushil.png",
       description: "Technical expert providing comprehensive support and solutions for professional bakery operations."
     }
   ];
@@ -69,10 +65,13 @@ const Owners = () => {
       <div className="mt-20 container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl font-bold text-orange-800 mb-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-orange-100 rounded-full mb-6">
+            <Users className="w-10 h-10 text-orange-600" />
+          </div>
+          <h2 className="text-4xl font-bold text-orange-800 mb-6 font-kumar-one">
             Meet Our Leadership Team
           </h2>
-          <p className="text-lg text-orange-700 max-w-6xl mx-auto leading-relaxed">
+          <p className="text-lg text-orange-700 max-w-4xl mx-auto leading-relaxed">
             With decades of combined experience in the food supply industry, our founders have built 
             a reputation for excellence, innovation, and unwavering commitment to quality. Together, 
             they lead two specialized divisions serving Gujarat's thriving food industry.
@@ -84,46 +83,42 @@ const Owners = () => {
           {/* Harsiddhi Tradings Team */}
           <div>
             <div className="text-center mb-10">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
+                <Building2 className="w-8 h-8 text-orange-600" />
+              </div>
               <h3 className="text-2xl font-bold text-orange-800 mb-3">Harsiddhi Tradings Leadership</h3>
-              <p className="text-orange-600 max-w-6xl mx-auto">
+              <p className="text-orange-600 max-w-4xl mx-auto">
                 Leading Gujarat's premium food ingredient supply with expertise in quality control and distribution
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {owners.filter(owner => owner.company === "Harsiddhi Tradings").map((owner, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-orange-200">
-                  <div className="relative">
-                    <img 
-                      src={owner.image} 
-                      alt={owner.name}
-                      className="w-full h-86 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="mb-4">
-                      <h4 className="text-xl font-bold text-orange-800 mb-1">{owner.name}</h4>
-                      <p className="text-orange-700 font-medium text-sm">{owner.role}</p>
+                <div key={index} className="bg-white rounded-xl shadow-lg border-2 border-orange-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="p-8">
+                    <div className="text-center mb-6">
+                      <div className="inline-flex items-center justify-center w-20 h-20 bg-orange-100 rounded-full mb-4">
+                        <Star className="w-10 h-10 text-orange-600" />
+                      </div>
+                      <h4 className="text-2xl font-bold text-orange-800 mb-2">{owner.name}</h4>
+                      <p className="text-orange-700 font-semibold text-lg mb-1">{owner.role}</p>
+                      <p className="text-orange-600 text-sm">{owner.company}</p>
                     </div>
                     
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-center space-x-2 text-sm">
-                        <Calendar className="w-4 h-4 text-orange-600" />
-                        <span className="text-orange-700">{owner.experience} Experience</span>
+                    <div className="space-y-4 mb-6">
+                      <div className="flex items-center justify-center space-x-3 text-sm bg-orange-50 rounded-lg p-3">
+                        <Calendar className="w-5 h-5 text-orange-600" />
+                        <span className="text-orange-700 font-medium">{owner.experience} Experience</span>
                       </div>
-                      <div className="flex items-center space-x-2 text-sm">
-                        <Award className="w-4 h-4 text-orange-600" />
-                        <span className="text-orange-700">{owner.specialization}</span>
+                      <div className="flex items-center justify-center space-x-3 text-sm bg-orange-50 rounded-lg p-3">
+                        <Award className="w-5 h-5 text-orange-600" />
+                        <span className="text-orange-700 font-medium">{owner.specialization}</span>
                       </div>
                     </div>
                     
-                    <p className="text-orange-600 text-sm leading-relaxed mb-6">
+                    <p className="text-orange-600 text-sm leading-relaxed text-center">
                       {owner.description}
                     </p>
-                    
-                    
                   </div>
                 </div>
               ))}
@@ -133,6 +128,9 @@ const Owners = () => {
           {/* Pavanputra Sales Team */}
           <div>
             <div className="text-center mb-10">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
+                <Target className="w-8 h-8 text-orange-600" />
+              </div>
               <h3 className="text-2xl font-bold text-orange-800 mb-3">Pavanputra Sales Leadership</h3>
               <p className="text-orange-600 max-w-4xl mx-auto">
                 Driving innovation in professional bakery equipment and technology solutions
@@ -141,37 +139,31 @@ const Owners = () => {
             
             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {owners.filter(owner => owner.company === "Pavanputra Sales").map((owner, index) => (
-                <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden border-2 border-orange-200">
-                  <div className="relative">
-                    <img 
-                      src={owner.image} 
-                      alt={owner.name}
-                      className="w-full h-64 object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent"></div>
-                  </div>
-                  
-                  <div className="p-6">
-                    <div className="mb-4">
-                      <h4 className="text-xl font-bold text-orange-800 mb-1">{owner.name}</h4>
-                      <p className="text-orange-700 font-medium text-sm">{owner.role}</p>
+                <div key={index} className="bg-white rounded-xl shadow-lg border-2 border-orange-200 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+                  <div className="p-8">
+                    <div className="text-center mb-6">
+                      <div className="inline-flex items-center justify-center w-20 h-20 bg-orange-100 rounded-full mb-4">
+                        <Star className="w-10 h-10 text-orange-600" />
+                      </div>
+                      <h4 className="text-2xl font-bold text-orange-800 mb-2">{owner.name}</h4>
+                      <p className="text-orange-700 font-semibold text-lg mb-1">{owner.role}</p>
+                      <p className="text-orange-600 text-sm">{owner.company}</p>
                     </div>
                     
-                    <div className="space-y-3 mb-6">
-                      <div className="flex items-center space-x-2 text-sm">
-                        <Calendar className="w-4 h-4 text-orange-600" />
-                        <span className="text-orange-700">{owner.experience} Experience</span>
+                    <div className="space-y-4 mb-6">
+                      <div className="flex items-center justify-center space-x-3 text-sm bg-orange-50 rounded-lg p-3">
+                        <Calendar className="w-5 h-5 text-orange-600" />
+                        <span className="text-orange-700 font-medium">{owner.experience} Experience</span>
                       </div>
-                      <div className="flex items-center space-x-2 text-sm">
-                        <Award className="w-4 h-4 text-orange-600" />
-                        <span className="text-orange-700">{owner.specialization}</span>
+                      <div className="flex items-center justify-center space-x-3 text-sm bg-orange-50 rounded-lg p-3">
+                        <Award className="w-5 h-5 text-orange-600" />
+                        <span className="text-orange-700 font-medium">{owner.specialization}</span>
                       </div>
                     </div>
                     
-                    <p className="text-orange-600 text-sm leading-relaxed mb-6">
+                    <p className="text-orange-600 text-sm leading-relaxed text-center">
                       {owner.description}
                     </p>
-                    
                   </div>
                 </div>
               ))}
@@ -182,6 +174,9 @@ const Owners = () => {
         {/* Company Values */}
         <div className="mt-20 bg-white rounded-xl p-8 shadow-lg border-2 border-orange-200">
           <div className="text-center mb-10">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-orange-100 rounded-full mb-4">
+              <Heart className="w-8 h-8 text-orange-600" />
+            </div>
             <h3 className="text-2xl font-bold text-orange-800 mb-4">Our Shared Values</h3>
             <p className="text-gray-600 max-w-2xl mx-auto">
               Built on a foundation of trust, quality, and innovation
@@ -190,8 +185,8 @@ const Owners = () => {
           
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Award className="w-6 h-6 text-gray-700" />
+              <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Award className="w-8 h-8 text-orange-600" />
               </div>
               <h4 className="text-lg font-semibold mb-3 text-gray-900">Excellence</h4>
               <p className="text-gray-600 text-sm">
@@ -200,8 +195,8 @@ const Owners = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <MapPin className="w-6 h-6 text-gray-700" />
+              <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <MapPin className="w-8 h-8 text-orange-600" />
               </div>
               <h4 className="text-lg font-semibold mb-3 text-gray-900">Local Expertise</h4>
               <p className="text-gray-600 text-sm">
@@ -210,8 +205,8 @@ const Owners = () => {
             </div>
             
             <div className="text-center">
-              <div className="w-12 h-12 bg-gray-100 rounded-lg flex items-center justify-center mx-auto mb-4">
-                <Phone className="w-6 h-6 text-gray-700" />
+              <div className="w-16 h-16 bg-orange-100 rounded-lg flex items-center justify-center mx-auto mb-4">
+                <Phone className="w-8 h-8 text-orange-600" />
               </div>
               <h4 className="text-lg font-semibold mb-3 text-gray-900">Partnership</h4>
               <p className="text-gray-600 text-sm">

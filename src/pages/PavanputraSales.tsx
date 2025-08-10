@@ -23,19 +23,19 @@ const PavanputraSales = () => {
       name: "Cocoa Products",
       products: ["Cocoa Powder", "Cocoa Butter"],
       description: "Premium cocoa-based ingredients",
-      image: ""
+      image: "/Products/cocoPowder.png"
     },
     {
       name: "Chocolate",
-      products: ["Chocolate Compound Slabs", "Choco Chips", "Couverture Chocolate", "Chocolate Slabs", "Chocolate fillings", "Ready to eat Chocolates"],
+      products: ["Chocolate Compound Slabs", "Choco Chips", "Couverture Chocolate", "Chocolate Slabs", "Chocolate fillings"],
       description: "Premium chocolate products for professional use",
-      image: "https://imgs.search.brave.com/rvYgxEPy8uKztnpqfUdDTyKX18M3ecZlyRifqjvsuXY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXBob3RvL3NsYWJz/LXdoaXRlLW1pbGst/ZGFyay1jaG9jb2xh/dGUtMjYwbnctMTQx/NTU0Mzc2NS5qcGc"
+      image: "/Products/Chocolate.png"
     },
     {
       name: "Essence",
-      products: ["Flavouring Essence", "Liquid Essence", "Oil Essence", "Gel Essence", "Splash Essence"],
+      products: ["Flavouring Essence", "Oil Essence","Aroma Flavour"],
       description: "Essence for food manufacturing",
-      image: "https://imgs.search.brave.com/xt7Laq8DZtkRf_KGqADWc5JRCRdOqdsmsxKpuStEnqU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by92/YXJpb3VzLWhvbGkt/Y29sb3ItcG93ZGVy/LWJvd2wtYmxhY2st/YmFja2dyb3VuZF8y/My0yMTQ3OTQ5MDM0/LmpwZz9zZW10PWFp/c19oeWJyaWQmdz03/NDA"
+      image: "/Products/Essence.png"
     },
     {
       name: "Food Colors",
@@ -44,29 +44,29 @@ const PavanputraSales = () => {
       image: "https://imgs.search.brave.com/xt7Laq8DZtkRf_KGqADWc5JRCRdOqdsmsxKpuStEnqU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/ZnJlZXBpay5jb20v/ZnJlZS1waG90by92/YXJpb3VzLWhvbGkt/Y29sb3ItcG93ZGVy/LWJvd2wtYmxhY2st/YmFja2dyb3VuZF8y/My0yMTQ3OTQ5MDM0/LmpwZz9zZW10PWFp/c19oeWJyaWQmdz03/NDA"
     },
     {
-      name: "Cake Tins",
-      products: ["Round Tin", "Square Tin"],
+      name: "Cake Moulds",
+      products: ["Round Tin", "Square Tin","Bread Tin", "Pie Tin", "Muffin Tin", "Doll Moulds"],
       description: "Professional-grade aluminum and steel cake tins",
       image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMcJ-WOqRN0fmMB6e2JvljoBDuUfPVqwkdgg&simage.png"
     },
     {
-      name: "SMT Milk Powder",
+      name: "Skimmed Milk Powder",
       products: ["Milk Powder"],
       description: " Premium milk powder products for professional use",
-      image: "https://imgs.search.brave.com/rvYgxEPy8uKztnpqfUdDTyKX18M3ecZlyRifqjvsuXY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWFn/ZS5zaHV0dGVyc3Rv/Y2suY29tL2ltYWdl/LXBob3RvL3NsYWJz/LXdoaXRlLW1pbGst/ZGFyay1jaG9jb2xh/dGUtMjYwbnctMTQx/NTU0Mzc2NS5qcGc"
+      image: "/Products/milkPowder.png"
     },
     {
-      name: "Cake Moulds",
-      products: ["Special Moulds", "Bread Moulds", "Cupcake And Muffin Moulds", "Pie And Tart Moulds", "Silicone Bakeware"],
+      name: "Silicone Moulds",
+      products: ["Chocolate Moulds", "Cupcake Moulds","Bread Moulds"],
       description: "Precision moulds for consistent baking results",
-      image: ""
+      image: "/Products/SiliconeMoulds.png"
     },
     
     {
       name: "Paper Products", 
       products: ["Paper Liners", "Bake And Serve Liners", "Parchment And Baking Paper"],
       description: "Premium baking papers and liners",
-      image: ""
+      image: "/Products/PaperMoulds.png"
     },
     {
       name: "Cake Accessories",
@@ -78,19 +78,13 @@ const PavanputraSales = () => {
       name: "Packaging",
       products: ["Brownie Boxes", "Cup Cake Boxes", "Fancy Boxes", "Monogram Boxes", "Plain White Cakes Boxes"],
       description: "Premium packaging solutions for your products",
-      image: ""
-    },
-    {
-      name: "Custom Products",
-      products: ["Edible Photo Print", "Customized Cake Topper", "Customized Baking Tray", "Customized Thermocol Cake Dummy", "Customized Sticker And Ribbon"],
-      description: "Bespoke solutions for unique requirements",
-      image: "https://images.unsplash.com/photo-1535141192574-5d4897c12636?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      image: "/Products/CakeBox.png"
     },
     {
       name: "Display",
       products: ["Photo Props", "Display"],
       description: "Attractive display solutions for showcasing",
-      image: ""
+      image: "/Products/CakeProps.png"
     }
   ];
   // Add after the categories array
@@ -112,8 +106,8 @@ const brandCategories = [
       { name: "Chandrakamal", logo: "ChandraKamal.png" },
       { name: "Hatsun", logo: "Hatsun.jpg" },
       { name: "Sonai", logo: "Sonai.jpg" },
-      { name: "Amul" },
-      { name: "Shridhi Gold" }
+      { name: "Amul", logo: "Amul.png" },
+      { name: "Shredhi Gold", logo: "Shreedhi.png" }
     ]
   },
   {
@@ -123,15 +117,26 @@ const brandCategories = [
       { name: "CEC", logo: "CEC.png" },
       { name: "Lux", logo: "Lux.png" },
       { name: "Eagle", logo: "Eagle.png" },
-      { name: "Monika" },
-      { name: "Nandi" },
-      { name: "Lilly brand" }
+      { name: "Monita",logo:"Monita.png" },
+      { name: "Nandi",logo:"nandi.png" },
+      { name: "Lilly brand",logo:"chemCent.png" },
+      {name: "FAB",logo:"Fab.png"}
     ]
   },
   {
-    title: "Chocolate ",
+    title: "Food Colors",
     brands: [
-      { name: "Veenar" }
+      { name: "ColourMist", logo: "ColourMist.png" }
+    ]
+  },
+  {
+    title: "Chocolate",
+    brands: [
+      { name: "Morde", logo: "Morde.jpg" },
+      { name: "2M", logo: "2M.png" },
+      { name: "Vanhouten", logo: "VanHouten.png" },
+      { name: "Goldsmith", logo: "Goldsmith.png" },
+      { name: "VanLeer", logo: "VanLeer.png" },
     ]
   }
 ];
